@@ -20,11 +20,11 @@ const LocationInput = ({ label, placeholder, value, onChange }) => {
 
   return (
     <div>
-      <label className="block text-sm font-medium text-gray-600 mb-1">{label}</label>
+      <label className="block text-sm font-light text-gray-300 mb-2">{label}</label>
       <input
         ref={inputRef}
         type="text"
-        className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+        className="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
         placeholder={placeholder}
         value={value}
         onChange={(e) => onChange(e.target.value)} // Allow manual typing

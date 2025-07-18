@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/logo.png" alt="Detourist Logo" width="400"/>
+  <img src="./frontend/public/logo.png" alt="Detourist Logo" width="400"/>
 </p>
 
 # Detourist: The Smart Travel Planner

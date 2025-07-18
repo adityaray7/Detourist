@@ -127,16 +127,15 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 font-sans flex flex-col">
+    <div className="min-h-screen bg-gray-900 font-sans flex flex-col">
       <Toaster position="top-center" reverseOrder={false} />
-      <header className="bg-white shadow-md p-4">
-        <h1 className="text-3xl font-bold text-gray-800">Detourist</h1>
-        <p className="text-gray-600">Your smart travel planner</p>
+      <header className="bg-gray-800 border-b border-gray-700 p-6 flex items-center">
+        <img src="/logo.png" alt="Detourist Logo" className="h-16" />
       </header>
 
-      <main className="flex-grow grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
-        <div className="md:col-span-1 bg-white p-6 rounded-lg shadow-lg">
-          <h2 className="text-2xl font-semibold mb-4 text-gray-700">Plan Your Route</h2>
+      <main className="flex-grow grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
+        <div className="md:col-span-1 bg-gray-800 p-6 rounded-xl border border-gray-700">
+          <h2 className="text-2xl font-light mb-6 text-white">Plan Your Route</h2>
           <div className="space-y-4">
             <LocationInput 
               label="Start Location"
@@ -151,10 +150,10 @@ function App() {
               onChange={setEndLocation}
             />
             <div>
-              <label htmlFor="attraction-type" className="block text-sm font-medium text-gray-600 mb-1">Attraction Type</label>
+              <label htmlFor="attraction-type" className="block text-sm font-light text-gray-300 mb-2">Attraction Type</label>
               <select 
                 id="attraction-type" 
-                className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                className="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
                 value={attractionType}
                 onChange={(e) => setAttractionType(e.target.value)}
               >
@@ -168,10 +167,10 @@ function App() {
               </select>
             </div>
             <div>
-              <label htmlFor="num-attractions" className="block text-sm font-medium text-gray-600 mb-1">Number of Attractions</label>
-              <input type="number" id="num-attractions" className="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" placeholder="e.g., 5" min="1" value={numAttractions} onChange={(e) => setNumAttractions(e.target.value)} />
+              <label htmlFor="num-attractions" className="block text-sm font-light text-gray-300 mb-2">Number of Attractions</label>
+              <input type="number" id="num-attractions" className="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all" placeholder="e.g., 5" min="1" value={numAttractions} onChange={(e) => setNumAttractions(e.target.value)} />
             </div>
-            <button onClick={handleGenerateRoute} disabled={loading} className="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out disabled:bg-blue-400 disabled:cursor-not-allowed">
+            <button onClick={handleGenerateRoute} disabled={loading} className="w-full bg-blue-600 text-white font-light py-3 px-6 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200 disabled:bg-gray-600 disabled:cursor-not-allowed">
               {loading ? 'Generating...' : 'Generate Initial Route'}
             </button>
           </div>
@@ -189,13 +188,13 @@ function App() {
 
           {selectedAttractions.length > 0 && (
             <div className="mt-6">
-              <button onClick={handleGenerateOptimizedRoute} disabled={loading} className="w-full bg-purple-600 text-white font-bold py-3 px-4 rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition duration-150 ease-in-out disabled:bg-purple-400 disabled:cursor-not-allowed">
+              <button onClick={handleGenerateOptimizedRoute} disabled={loading} className="w-full bg-purple-600 text-white font-light py-3 px-6 rounded-lg hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-200 disabled:bg-gray-600 disabled:cursor-not-allowed">
                 {loading ? 'Optimizing...' : `Generate Route with ${selectedAttractions.length} Attraction(s)`}
               </button>
             </div>
           )}
         </div>
-        <div className="md:col-span-2 rounded-lg shadow-lg overflow-hidden">
+        <div className="md:col-span-2 rounded-xl border border-gray-700 overflow-hidden">
           <Map route={route} attractions={attractions} />
         </div>
       </main>
