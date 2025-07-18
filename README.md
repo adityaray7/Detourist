@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/logo.png" alt="Detourist Logo" width="400"/>
+</p>
+
 # Detourist: The Smart Travel Planner
 
 Detourist is a web application designed to help users plan their road trips more effectively. It not only generates the optimal route between a start and end location but also discovers top-rated tourist attractions along the way, allowing users to create a customized and optimized multi-stop itinerary.
