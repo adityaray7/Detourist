@@ -91,7 +91,7 @@ app.post('/api/generate-route', async (req, res) => {
     console.log(`Found ${uniqueAttractions.length} unique attractions.`);
 
     const sortedAttractions = uniqueAttractions
-      .filter(p => p.rating) // Ensure place has a rating
+      .filter(p => p.rating && p.user_ratings_total >= 50) // Ensure place has a rating and at least 50 reviews
       .sort((a, b) => b.rating - a.rating);
 
     const topAttractions = sortedAttractions.slice(0, numAttractions);
