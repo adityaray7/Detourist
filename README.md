@@ -33,7 +33,7 @@ To run this project locally, you will need to set up both the backend and fronte
 
 1.  Navigate to the `backend` directory:
     ```bash
-    cd /Users/adityaraymishra/Documents/Detourist/backend
+    cd backend
     ```
 2.  Install the dependencies:
     ```bash
@@ -53,7 +53,7 @@ To run this project locally, you will need to set up both the backend and fronte
 
 1.  Navigate to the `frontend` directory:
     ```bash
-    cd /Users/adityaraymishra/Documents/Detourist/frontend
+    cd frontend
     ```
 2.  Install the dependencies:
     ```bash
